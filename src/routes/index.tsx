@@ -11,7 +11,7 @@ export default function MainRoutes() {
                 <Route index element={<Main />} />
                 <Route path="/connect" element={<Connect />} />
             </Route>
-            {/* <Route path="/test" element={<Test />} /> */}
+            <Route path="/test" element={<Test />} />
             <Route path="/" element={<Main />} />
             <Route path="/" element={<Main />} />
         </Routes>
