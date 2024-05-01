@@ -1,6 +1,7 @@
-export default function Header() {
+type HeaderProps = ReactDivProps;
+export default function Header({ className, ...props }: HeaderProps) {
     return (
-        <div className="bg-gray-200">
+        <div className={className} {...props}>
             <h1>헤더입니다</h1>
         </div>
     );
