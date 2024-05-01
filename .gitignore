@@ -6,6 +6,7 @@
 /build
 
 # Environmental Variables
+.env
 .env.local
 .env.*.local
 

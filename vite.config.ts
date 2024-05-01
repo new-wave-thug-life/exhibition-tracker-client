@@ -1,19 +1,20 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
     plugins: [react()],
-    root: 'src',
+    root: "src",
+    envDir: "../",
     server: {
         port: 3000,
         open: true,
     },
     resolve: {
         alias: {
-            '@': '/src',
+            "@": "/src",
         },
     },
     build: {
-        outDir: 'build',
+        outDir: "build",
     },
 });

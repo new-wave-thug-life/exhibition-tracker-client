@@ -5,6 +5,7 @@
         "node": true
     },
     "rules": {
+        "no-unused-vars": ["warn"],
         "quotes": ["error", "double"]
     }
 }
