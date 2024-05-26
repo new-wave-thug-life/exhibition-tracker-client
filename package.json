@@ -9,14 +9,22 @@
         "serve": "vite preview",
         "lint": "eslint src --fix",
         "format": "prettier --write src",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "@mui/material": "^5.15.18",
         "@reduxjs/toolkit": "^2.0.1",
+        "chart.js": "^4.4.3",
+        "d3": "^7.9.0",
         "react": "^18.2.0",
+        "react-chartjs-2": "^5.2.0",
+        "react-d3-components": "^0.9.1",
         "react-dom": "^18.2.0",
         "react-redux": "^9.0.4",
         "react-router-dom": "^6.21.1",
@@ -25,9 +33,11 @@
         "vite": "^5.2.10"
     },
     "devDependencies": {
+        "@types/d3": "^7.4.3",
         "@types/node": "^20.12.7",
         "@types/react": "^18.2.47",
         "@types/react-dom": "^18.2.18",
+        "@types/react-router-dom": "^5.3.3",
         "@typescript-eslint/eslint-plugin": "^6.18.0",
         "@typescript-eslint/parser": "^6.18.0",
         "@vitejs/plugin-react": "^4.2.1",
@@ -37,6 +47,7 @@
         "eslint-plugin-prettier": "^5.1.2",
         "postcss": "^8.4.33",
         "prettier": "^3.1.1",
-        "tailwindcss": "^3.4.1"
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3"
     }
 }

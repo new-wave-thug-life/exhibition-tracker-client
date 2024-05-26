@@ -45,24 +45,24 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-indigo-950">
-            <div className="p-8 bg-white rounded-lg shadow-md">
-                <h2 className="mb-8 text-3xl font-bold">Login</h2>
+        <AuthFormWrapper title="Login">
                 <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full h-12 mb-4" />
                 <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full h-12 mb-4" />
                 {error && <p className="mb-4 text-red-500">{error}</p>}
-                <Button onClick={handleSubmit} className="w-full h-12 text-lg">
+            <Button onClick={handleSubmit} className="w-full h-12 text-lg text-white bg-indigo-950 hover:bg-indigo-850">
                     Login
                 </Button>
                 <div className="flex justify-between mt-4">
-                    <button className="text-sm text-indigo-600 hover:underline">Forgot password?</button>
-                    <Link to="/register" className="text-sm text-indigo-600 hover:underline">
+                <Link to="/forgot-password" className="text-sm text-indigo-950 hover:underline">
+                    Forgot password?
+                </Link>
+                <span className="ml-40">
+                    <Link to="/register" className="text-sm text-indigo-950 hover:underline">
                         Sign up
-                    </Link>{" "}
-                    {/* 회원가입 버튼 */}
-                </div>
+                    </Link>
+                </span>
             </div>
-        </div>
+        </AuthFormWrapper>
     );
 };
 

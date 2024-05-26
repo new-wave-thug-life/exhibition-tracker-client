@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import AuthFormWrapper from "../components/AuthFormWrapper"; // AuthFormWrapper를 import합니다.
 
 const Register: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [name, setName] = useState("");
     const [error, setError] = useState("");
 
     const validateEmail = (email: string) => {
@@ -15,8 +16,7 @@ const Register: React.FC = () => {
     };
 
     const validatePassword = (password: string) => {
-        const re = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z\d]{6,}$/;
-        return re.test(password);
+        return password.length >= 6;
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -29,7 +29,7 @@ const Register: React.FC = () => {
         }
 
         if (!validatePassword(password)) {
-            setError("Password must contain at least 6 characters with at least one letter and one number");
+            setError("Password must be at least 6 characters");
             return;
         }
 
@@ -38,15 +38,23 @@ const Register: React.FC = () => {
             return;
         }
 
-        // 여기에 fetch 로직 추가
+        const response = await fetch("/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-        console.log("Form submitted:", { email, password, name });
+        if (!response.ok) {
+            setError("Failed to register");
+        }
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-indigo-950">
-            <div className="p-8 bg-white rounded-lg shadow-md">
-                <h2 className="mb-8 text-3xl font-bold">Register</h2>
+        <AuthFormWrapper title="Register">
+            {" "}
+            {/* AuthFormWrapper를 사용하고, 제목을 "Register"으로 설정합니다. */}
                 <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full h-12 mb-4" />
                 <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full h-12 mb-4" />
                 <Input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="w-full h-12 mb-4" />
@@ -55,8 +63,12 @@ const Register: React.FC = () => {
                 <Button onClick={handleSubmit} className="w-full h-12 text-lg">
                     Register
                 </Button>
+            <div className="flex justify-end mt-4">
+                <Link to="/login" className="text-sm text-indigo-950 hover:underline">
+                    Back to Login
+                </Link>
             </div>
-        </div>
+        </AuthFormWrapper>
     );
 };
 
