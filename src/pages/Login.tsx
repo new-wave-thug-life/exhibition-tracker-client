@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // react-router-dom에서 Link 불러오기
+import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import AuthFormWrapper from "../components/AuthFormWrapper";
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState("");

@@ -58,7 +58,6 @@ const Register: React.FC = () => {
                 <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full h-12 mb-4" />
                 <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full h-12 mb-4" />
                 <Input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="w-full h-12 mb-4" />
-                <Input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full h-12 mb-4" />
                 {error && <p className="mb-4 text-red-500">{error}</p>}
                 <Button onClick={handleSubmit} className="w-full h-12 text-lg">
                     Register
