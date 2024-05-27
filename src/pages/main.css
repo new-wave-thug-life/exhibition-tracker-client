@@ -1,0 +1,55 @@
+.chart-background {
+    background-color: #f9f9f9;
+}
+
+.bar {
+    fill: steelblue;
+    transition: fill 0.3s;
+}
+
+.bar:hover {
+    fill: orange;
+}
+
+.axis-label {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.axis-label text {
+    font-size: 12px;
+}
+
+.axis-label path,
+.axis-label line {
+    stroke: #ccc;
+}
+
+.title {
+    font-size: 24px;
+    text-anchor: middle;
+    text-decoration: underline;
+}
+/* 부모 요소에 CSS 그리드 설정 */
+#chart-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+.chart-container {
+    text-align: center;
+}
+
+.chart-caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chart {
+    width: 100%;
+    height: 400px; /* Set the desired height for the charts */
+}
